@@ -1,0 +1,52 @@
+
+/* CSS chung cho tất cả các trạng thái */
+.product-status {
+    display: inline-block;
+    padding: 5px 15px;
+    font-weight: bold;
+    color: white;  /* Màu chữ */
+    text-transform: uppercase;
+    border-radius: 10px;
+    position: absolute; /* Đặt vào vị trí tuyệt đối */
+    top: 10px; /* Cách cạnh trên 10px */
+    left: 10px; /* Cách cạnh trái 10px */
+    margin: 0;
+}
+
+.product-status i {
+    margin-right: 5px; /* Khoảng cách giữa icon và chữ */
+}
+
+/* Màu sắc trạng thái */
+.product-status.in-stock {
+    background-color: #28a745; /* Màu xanh lá cho In Stock */
+}
+
+.product-status.new-product {
+    background-color: #fd7e14; /* Màu cam cho New Product */
+}
+
+.product-status.pre-order {
+    background-color: #17a2b8; /* Màu xanh dương cho Pre Order */
+}
+
+.product-status.sold-out {
+    background-color: #ff4d4d; /* Màu đỏ cho Sold Out */
+}
+
+/* Tạo bóng đổ cho trạng thái */
+.product-status:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.badge {
+    z-index: 10 !important; /* Đảm bảo luôn hiển thị trên các lớp khác */
+}

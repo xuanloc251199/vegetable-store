@@ -1,0 +1,391 @@
+/* Reset margin và padding mặc định */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white; /* Màu nền sáng nhẹ */
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #ffffff; /* Nền sáng cho navbar */
+    padding: 20px 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    transition: background-color 0.3s ease; /* Thêm hiệu ứng chuyển nền */
+}
+
+/* Menu chính */
+.menu-link {
+    border-radius: 50px;
+}
+
+/* Hover cho menu chính */
+.menu-link:hover {
+    background-color: #31B55D;
+    color: #ffffff !important;
+}
+
+
+/* Dropdown menu */
+.menu-list-item {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.menu-list-item:hover .submenu {
+    display: block;
+    opacity: 1;
+    transform: translateY(10px);  /* Hiệu ứng trượt xuống mượt mà */
+}
+
+.submenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.submenu li a {
+    text-decoration: none;
+    color: #f1f1f1;
+    padding: 12px;
+    display: block;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+.submenu li a:hover {
+    background-color: #31B55D;
+    color: #ffffff;
+}
+
+/* Các icon (giỏ hàng, tài khoản) */
+.nav-icons a {
+    margin-left: 30px;
+    font-size: 24px;
+    color: #333;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-icons a:hover {
+    color: #31B55D;  /* Màu xanh khi hover */
+    transform: scale(1.2);  /* Phóng to khi hover */
+}
+
+/* Form tìm kiếm */
+.navbar .form-control {
+    width: 250px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    background-color: #f1f1f1;
+    transition: background-color 0.3s, border 0.3s;
+    margin-right: 20px;
+}
+
+.navbar .form-control:focus {
+    outline: none;
+    background-color: #fff;
+    border-color: #31B55D;
+}
+
+.navbar .btn {
+    background-color: #31B55D;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.navbar .btn:hover {
+    background-color: #0097a7;
+    transform: translateY(-2px);  /* Hiệu ứng nâng lên nhẹ */
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .navbar .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar .nav-item {
+        margin: 10px 0;
+    }
+
+    .submenu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .navbar .form-control {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Loại bỏ dấu chấm trong danh sách */
+li.menu-list-item {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
+
+
+/* Ẩn menu con mặc định */
+.menu-list-item .megamenu-sub {
+    display: none; /* Ẩn menu con khi không hover */
+    position: absolute;
+    top: 100%;
+    left: -300px;
+    width: auto;  /* Chiều rộng của menu con sẽ tự động căn chỉnh */
+    min-width: 1100px;  /* Đặt chiều rộng tối thiểu cho menu con */
+    background-color: #343a40;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;  /* Giãn cách các mục bên trong */
+    z-index: 9999;
+}
+
+/* Khi hover vào mục "PRODUCTS" thì hiển thị menu con */
+.menu-list-item:hover .megamenu-sub {
+    display: block;
+}
+
+/* Các mục con trong menu con */
+
+
+/* Tạo không gian giữa các mục */
+.megamenu-sub-level2 .item {
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+
+/* Style cho liên kết trong menu */
+.megamenu-sub-wrap .item a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+  
+    transition: color 0.3s ease;
+
+}
+
+/* Màu khi hover vào các mục */
+.megamenu-sub-wrap .item a:hover {
+    color: #ffc107; /* Màu vàng khi hover */
+}
+
+/* Menu con sẽ hiển thị theo dạng hàng ngang */
+.megamenu-sub-wrap {
+    display: flex;
+    justify-content: space-between;  /* Giãn cách các mục đều */
+    flex-wrap: wrap;  /* Cho phép các mục chuyển sang hàng tiếp theo nếu không đủ không gian */
+}
+
+/* Tạo hiệu ứng cho các mục con bên trong menu con */
+.megamenu-sub-level2 a {
+    color: #ccc;
+    font-size: 0.9rem;
+    display: block;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+    
+}
+
+.megamenu-sub-level2 a:hover {
+    color: #ffc107; /* Màu vàng khi hover vào các mục con */
+}
+
+
+
+/* Cart Modal Styles */
+.cart-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.cart-content {
+    background-color: #fff;
+    padding: 20px;
+    width: 700px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+}
+
+.cart-content table {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.checkout-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+
+/* login */
+   /* Đảm bảo không ảnh hưởng đến phần header */
+section {
+    background-color: #f9f9f9; /* Nền nhẹ nhàng cho toàn bộ section */
+    padding: 40px 0; /* Khoảng cách từ trên xuống dưới */
+}
+
+.container {
+    max-width: 500px; /* Giới hạn chiều rộng của form */
+}
+
+h2 {
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#login-form  {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 50px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Thêm bóng mờ cho form */
+}
+
+/* Các thông báo lỗi và thành công */
+.alert {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.alert-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.alert-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+/* Phần input */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background-color: #fafafa;
+    box-sizing: border-box;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    background-color: #fff;
+    outline: none;
+}
+
+/* Nút đăng nhập */
+input[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+    background-color: #333; /* Màu nền của nút */
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #555; /* Khi hover vào nút */
+}
+
+/* Liên kết đăng ký */
+#register-url {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#register-url:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+#register-url:focus {
+    outline: none;
+}
+
+/* Đảm bảo layout responsive */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Chiếm rộng toàn bộ màn hình trên thiết bị di động */
+    }
+}
+
+
+
+
+
+
+
+
+   

@@ -1,0 +1,252 @@
+
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f4f4;/* Màu nền trắng */
+    color: #333;
+}
+
+/* Home Section (Banner) */
+#home {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Banner chiếm toàn bộ chiều cao màn hình */
+    transition: height 0.3s ease-in-out; /* Hiệu ứng thay đổi chiều cao khi cuộn */
+    overflow: hidden;
+}
+
+.home-slider {
+    display: flex;
+    width: 100%;
+    height: 100%; /* Đảm bảo ảnh banner cũng chiếm toàn bộ chiều cao */
+    transition: transform 1s ease-in-out;
+}
+
+.banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Hiệu ứng chuyển ảnh cho banner khi hover */
+#home:hover .home-slider {
+    transform: translateX(-100%);
+}
+
+.home-slider:hover .banner-img {
+    opacity: 0.7; /* Hiệu ứng mờ khi hover */
+}
+
+
+/* Featured Section */
+#featured {
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+#featured h3 {
+    font-size: 36px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+#featured hr {
+    width: 100%; /* Để thanh dài toàn bộ chiều rộng container */
+    border: 2px solid #ff5722; /* Màu sắc của thanh */
+    margin-bottom: 30px; /* Khoảng cách phía dưới thanh */
+    max-width: 600px; /* Giới hạn chiều dài tối đa của thanh nếu muốn */
+    margin-left: auto; /* Để căn giữa */
+    margin-right: auto; /* Căn giữa thanh */
+}
+
+#featured p {
+    font-size: 20px;
+    color: #777;
+}
+.product-link {
+    text-decoration: none; /* Loại bỏ gạch dưới mặc định khi hover */
+    color: inherit; /* Giữ màu sắc mặc định của văn bản */
+}
+
+.product-link:hover {
+    text-decoration: none; /* Đảm bảo không có gạch dưới khi hover */
+    color: #007bff; /* Màu sắc thay đổi khi hover (bạn có thể thay đổi màu này theo ý thích) */
+}
+
+/* Tùy chọn: Thêm hiệu ứng chuyển động mượt mà khi hover */
+.product-link:hover .product {
+    transform: scale(1.05); /* Phóng to một chút khi hover */
+    transition: transform 0.3s ease-in-out; /* Hiệu ứng chuyển động mượt mà */
+}
+
+/* Product Styles */
+.product {
+    position: relative;
+    margin: 20px 0;
+    overflow: hidden;
+    border-radius: 10px; /* Tạo viền tròn cho sản phẩm */
+    background-color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-10px); /* Tăng hiệu ứng nâng lên khi hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng hover cho ảnh sản phẩm */
+.product:hover img {
+    transform: scale(1.1); /* Phóng to ảnh khi hover */
+}
+
+/* Hiệu ứng hover cho ảnh sản phẩm khi chuyển ảnh thứ hai */
+.product:hover .img-fluid {
+    opacity: 0; /* Ẩn ảnh đầu tiên */
+}
+
+.product .img-second {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.product:hover .img-second {
+    opacity: 1; /* Hiển thị ảnh thứ hai khi hover */
+}
+
+/* Star Rating */
+.star i {
+    color: #ffd700;
+}
+
+/* Product Name and Price */
+.p-product {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+.p-price {
+    font-size: 16px;
+    color: #ff5722;
+    margin-top: 10px;
+}
+.p-price-discount {
+    color: black !important;              /* Màu chữ đen */
+    font-style: italic !important;        /* In nghiêng */
+    text-decoration: line-through !important; /* Gạch bỏ chữ */
+}
+
+/* Buy Button */
+.buy-btn {
+    background-color: #ff5722;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.buy-btn:hover {
+    background-color: #e64a19;
+}
+
+/* Product Pagination */
+.pagination {
+    justify-content: center;
+}
+
+.page-item.active .page-link {
+    background-color: #ff5722;
+    color: white;
+}
+
+.page-link {
+    color: #ff5722;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+.page-link:hover {
+    background-color: #ff5722;
+    color: white;
+}
+
+/* Brand Section */
+#brand {
+    padding: 30px 0;
+    background-color: #fff;
+}
+
+#brand img {
+    width: 100%;
+    height: auto;
+    margin: 15px 0;
+    object-fit: contain;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .home-slider {
+        flex-direction: column;
+    }
+
+    .product {
+        margin: 15px 0;
+    }
+
+    .product img {
+        height: 200px;
+    }
+
+    #featured h3 {
+        font-size: 28px;
+    }
+
+    #featured p {
+        font-size: 18px;
+    }
+
+    .buy-btn {
+        font-size: 14px;
+    }
+
+    .pagination .page-link {
+        padding: 8px 15px;
+    }
+
+    .pagination {
+        font-size: 14px;
+    }
+}
+
+
+
+

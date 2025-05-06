@@ -1,0 +1,136 @@
+   /* Footer Styles */
+   footer {
+    background-color: #333;  /* Nền tối cho footer */
+    color: #f1f1f1;  /* Màu chữ sáng */
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+.footer-one ul {
+    padding: 0;
+    list-style: none; /* Loại bỏ dấu chấm đầu dòng */
+}
+
+.footer-one ul li {
+    margin-bottom: 10px; /* Khoảng cách giữa các mục */
+}
+
+.footer-one ul li a {
+    text-decoration: none; /* Loại bỏ gạch chân */
+    color: inherit; /* Giữ màu chữ giống với văn bản mặc định */
+    display: block; /* Đảm bảo liên kết chiếm toàn bộ diện tích của li */
+}
+
+.footer-one ul li a:hover {
+    color: #007bff; /* Thêm hiệu ứng hover nếu muốn */
+}
+
+/* Footer container */
+footer .row {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Footer columns */
+footer .footer-one {
+    margin-bottom: 30px;
+}
+
+footer .footer-one h3, footer .footer-one h5 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #31B55D;  /* Màu xanh để nổi bật */
+}
+
+footer .footer-one ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer .footer-one ul li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+footer .footer-one ul li:hover {
+    color: #31B55D;
+}
+
+/* Footer image */
+footer .footer-one img {
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+/* Footer contact section */
+footer .footer-one .text-uppercase {
+    font-weight: 700;
+    color: #fff;
+}
+
+footer .footer-one p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Google Map iframe */
+footer .footer-one iframe {
+    border: 0;
+    border-radius: 8px;
+}
+
+/* Social media icons */
+footer .icon i {
+    font-size: 24px;
+    color: #fff;
+    margin: 0 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .icon i:hover {
+    color: #31B55D;
+    transform: scale(1.2);
+}
+
+/* Copyright section */
+footer .copyright {
+    background-color: #222;
+    padding: 20px;
+}
+
+footer .copyright p {
+    font-size: 16px;
+    color: #fff;
+}
+
+footer .copyright .icon {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+    footer .row {
+        text-align: center;
+    }
+
+    footer .footer-one {
+        margin-bottom: 20px;
+    }
+
+    footer .footer-one h3, footer .footer-one h5 {
+        font-size: 20px;
+    }
+
+    footer .footer-one ul li {
+        font-size: 14px;
+    }
+
+    footer .icon i {
+        font-size: 20px;
+        margin: 0 10px;
+    }
+}
